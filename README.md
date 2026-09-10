@@ -8,8 +8,8 @@ This repo currently covers our own services, but is meant to grow into a general
 
 | Dashboard | Description |
 | --- | --- |
-| [api-gateway](api-gateway) | Envoy sidecar monitoring (traffic, upstream clusters, TLS, DNS/control plane, server resources) |
-| [camel-integration](camel-integration) | JVM and Apache Camel monitoring (memory, GC, threads, routes, exchanges) |
+| [api-gateway](api-gateway) | Traffic, backend health, TLS certificates and resource usage for an API gateway |
+| [camel-integration](camel-integration) | Application health and integration route performance for a Java/Camel service |
 
 ## How to use
 
