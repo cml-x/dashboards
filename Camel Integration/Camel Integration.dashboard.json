@@ -1,0 +1,2232 @@
+{
+    "version": 8,
+    "dashboardId": "7538291046621987328",
+    "title": "Camel Integration",
+    "description": "JVM and Apache Camel metrics for the Camel Integration service (jvm_* / camel_* streams via OpenTelemetry). Filter by Service variable.",
+    "role": "",
+    "owner": "",
+    "created": "2026-08-20T00:00:00.000Z",
+    "tabs": [
+        {
+            "tabId": "jvm",
+            "name": "JVM",
+            "panels": [
+                {
+                    "id": "panel_1",
+                    "type": "line",
+                    "title": "JVM Memory Used (Heap)",
+                    "description": "Used heap memory by pool.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "bytes"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(jvm_memory_used{service_name=~\"$service_name\", area=\"heap\"}) by (id)",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "jvm_memory_used",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "{id}",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 96,
+                        "h": 17,
+                        "i": 1
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_2",
+                    "type": "line",
+                    "title": "JVM Memory Used (Non-Heap)",
+                    "description": "Used non-heap memory by pool.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "bytes"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(jvm_memory_used{service_name=~\"$service_name\", area=\"nonheap\"}) by (id)",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "jvm_memory_used",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "{id}",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 96,
+                        "y": 0,
+                        "w": 96,
+                        "h": 17,
+                        "i": 2
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_3",
+                    "type": "line",
+                    "title": "JVM GC Pause Duration (avg)",
+                    "description": "Average garbage collection pause duration by collector.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "seconds"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(rate(jvm_gc_pause_sum{service_name=~\"$service_name\"}[5m])) by (gc) / sum(rate(jvm_gc_pause_count{service_name=~\"$service_name\"}[5m])) by (gc)",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "jvm_gc_pause_sum",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "{gc}",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 0,
+                        "y": 17,
+                        "w": 96,
+                        "h": 17,
+                        "i": 3
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_4",
+                    "type": "line",
+                    "title": "JVM GC Pause Rate",
+                    "description": "Garbage collection pauses per second by collector.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "numbers"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(rate(jvm_gc_pause_count{service_name=~\"$service_name\"}[5m])) by (gc)",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "jvm_gc_pause_count",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "{gc}",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 96,
+                        "y": 17,
+                        "w": 96,
+                        "h": 17,
+                        "i": 4
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_5",
+                    "type": "line",
+                    "title": "JVM Threads",
+                    "description": "Live, daemon and peak thread counts.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "numbers"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(jvm_threads_live{service_name=~\"$service_name\"})",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "jvm_threads_live",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "Live",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        },
+                        {
+                            "query": "sum(jvm_threads_daemon{service_name=~\"$service_name\"})",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "jvm_threads_daemon",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "Daemon",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        },
+                        {
+                            "query": "sum(jvm_threads_peak{service_name=~\"$service_name\"})",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "jvm_threads_peak",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "Peak",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 0,
+                        "y": 34,
+                        "w": 96,
+                        "h": 17,
+                        "i": 5
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_6",
+                    "type": "line",
+                    "title": "JVM Thread States",
+                    "description": "Current thread count broken down by state.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "numbers"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(jvm_threads_states{service_name=~\"$service_name\"}) by (state)",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "jvm_threads_states",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "{state}",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 96,
+                        "y": 34,
+                        "w": 96,
+                        "h": 17,
+                        "i": 6
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_7",
+                    "type": "line",
+                    "title": "JVM Classes Loaded / Unloaded",
+                    "description": "Loaded class count and unload rate.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "numbers"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(jvm_classes_loaded{service_name=~\"$service_name\"})",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "jvm_classes_loaded",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "Loaded",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        },
+                        {
+                            "query": "sum(rate(jvm_classes_unloaded{service_name=~\"$service_name\"}[5m]))",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "jvm_classes_unloaded",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "Unloaded (rate)",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 0,
+                        "y": 51,
+                        "w": 96,
+                        "h": 17,
+                        "i": 7
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_8",
+                    "type": "line",
+                    "title": "CPU Usage",
+                    "description": "Process and system CPU usage.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "percent"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "avg(process_cpu_usage{service_name=~\"$service_name\"}) * 100",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "process_cpu_usage",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "Process CPU",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        },
+                        {
+                            "query": "avg(system_cpu_usage{service_name=~\"$service_name\"}) * 100",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "system_cpu_usage",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "System CPU",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 96,
+                        "y": 51,
+                        "w": 96,
+                        "h": 17,
+                        "i": 8
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_9",
+                    "type": "line",
+                    "title": "JVM Buffer Memory Used",
+                    "description": "Direct and mapped buffer memory used.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "bytes"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(jvm_buffer_memory_used{service_name=~\"$service_name\"}) by (id)",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "jvm_buffer_memory_used",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "{id}",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 0,
+                        "y": 68,
+                        "w": 96,
+                        "h": 17,
+                        "i": 9
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_10",
+                    "type": "metric",
+                    "title": "Process Uptime",
+                    "description": "JVM process uptime.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "seconds"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "max(process_uptime{service_name=~\"$service_name\"})",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "process_uptime",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 96,
+                        "y": 68,
+                        "w": 96,
+                        "h": 17,
+                        "i": 10
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                }
+            ]
+        },
+        {
+            "tabId": "camel",
+            "name": "Camel",
+            "panels": [
+                {
+                    "id": "panel_11",
+                    "type": "metric",
+                    "title": "Camel Routes Running",
+                    "description": "Number of running Camel routes.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "numbers"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(camel_routes_running{service_name=~\"$service_name\"}) by (camelcontext)",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "camel_routes_running",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "{camelcontext}",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 0,
+                        "y": 0,
+                        "w": 96,
+                        "h": 17,
+                        "i": 11
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_12",
+                    "type": "line",
+                    "title": "Exchanges Rate",
+                    "description": "Total exchanges processed per second, by route.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "numbers"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(rate(camel_exchanges_total{service_name=~\"$service_name\"}[5m])) by (routeid)",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "camel_exchanges_total",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "{routeid}",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 96,
+                        "y": 0,
+                        "w": 96,
+                        "h": 17,
+                        "i": 12
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_13",
+                    "type": "line",
+                    "title": "Exchanges Succeeded Rate",
+                    "description": "Successfully completed exchanges per second, by route.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "numbers"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(rate(camel_exchanges_succeeded{service_name=~\"$service_name\"}[5m])) by (routeid)",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "camel_exchanges_succeeded",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "{routeid}",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 0,
+                        "y": 17,
+                        "w": 96,
+                        "h": 17,
+                        "i": 13
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_14",
+                    "type": "line",
+                    "title": "Exchange Failure Rate",
+                    "description": "Exchanges per second that did not complete successfully, by route.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "numbers"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(rate(camel_exchanges_total{service_name=~\"$service_name\"}[5m])) by (routeid) - sum(rate(camel_exchanges_succeeded{service_name=~\"$service_name\"}[5m])) by (routeid)",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "camel_exchanges_total",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "{routeid}",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 96,
+                        "y": 17,
+                        "w": 96,
+                        "h": 17,
+                        "i": 14
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_15",
+                    "type": "line",
+                    "title": "Exchanges Inflight",
+                    "description": "Exchanges currently being processed, by route.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "numbers"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(camel_exchanges_inflight{service_name=~\"$service_name\"}) by (routeid)",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "camel_exchanges_inflight",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "{routeid}",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 0,
+                        "y": 34,
+                        "w": 96,
+                        "h": 17,
+                        "i": 15
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_16",
+                    "type": "line",
+                    "title": "Route Processing Time (avg)",
+                    "description": "Average route processing duration, by route.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "seconds"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(rate(camel_route_policy_sum{service_name=~\"$service_name\"}[5m])) by (routeid) / sum(rate(camel_route_policy_count{service_name=~\"$service_name\"}[5m])) by (routeid)",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "camel_route_policy_sum",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "{routeid}",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 96,
+                        "y": 34,
+                        "w": 96,
+                        "h": 17,
+                        "i": 16
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_17",
+                    "type": "line",
+                    "title": "Route Processing Time (max)",
+                    "description": "Maximum observed route processing duration, by route.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "seconds"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "max(camel_route_policy_max{service_name=~\"$service_name\"}) by (routeid)",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "camel_route_policy_max",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "{routeid}",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 0,
+                        "y": 51,
+                        "w": 96,
+                        "h": 17,
+                        "i": 17
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_18",
+                    "type": "line",
+                    "title": "Exchange Latency by Endpoint (avg)",
+                    "description": "Average exchange event duration, by endpoint.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "seconds"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(rate(camel_exchange_event_notifier_sum{service_name=~\"$service_name\"}[5m])) by (endpointname) / sum(rate(camel_exchange_event_notifier_count{service_name=~\"$service_name\"}[5m])) by (endpointname)",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "camel_exchange_event_notifier_sum",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "{endpointname}",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 96,
+                        "y": 51,
+                        "w": 96,
+                        "h": 17,
+                        "i": 18
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                },
+                {
+                    "id": "panel_19",
+                    "type": "line",
+                    "title": "Exchange Events by Type",
+                    "description": "Exchange notifier events per second, by event type.",
+                    "config": {
+                        "show_legends": true,
+                        "legends_position": null,
+                        "decimals": 2,
+                        "line_thickness": 1.5,
+                        "step_value": "0",
+                        "top_results_others": false,
+                        "axis_border_show": false,
+                        "label_option": {
+                            "rotate": 0
+                        },
+                        "show_symbol": false,
+                        "line_interpolation": "smooth",
+                        "legend_width": {
+                            "unit": "px"
+                        },
+                        "legend_height": {
+                            "unit": "px"
+                        },
+                        "base_map": {
+                            "type": "osm"
+                        },
+                        "map_type": {
+                            "type": "world"
+                        },
+                        "map_view": {
+                            "zoom": 1,
+                            "lat": 0,
+                            "lng": 0
+                        },
+                        "map_symbol_style": {
+                            "size": "by Value",
+                            "size_by_value": {
+                                "min": 1,
+                                "max": 100
+                            },
+                            "size_fixed": 2
+                        },
+                        "drilldown": [],
+                        "mark_line": [],
+                        "override_config": [],
+                        "connect_nulls": false,
+                        "no_value_replacement": "",
+                        "wrap_table_cells": false,
+                        "table_transpose": false,
+                        "table_dynamic_columns": false,
+                        "mappings": [],
+                        "color": {
+                            "mode": "palette-classic-by-series",
+                            "fixedColor": [
+                                "#53ca53"
+                            ],
+                            "seriesBy": "last",
+                            "colorBySeries": []
+                        },
+                        "trellis": {
+                            "layout": null,
+                            "num_of_columns": 1,
+                            "group_by_y_axis": false
+                        },
+                        "show_gridlines": true,
+                        "unit": "numbers"
+                    },
+                    "queryType": "promql",
+                    "queries": [
+                        {
+                            "query": "sum(rate(camel_exchange_event_notifier_count{service_name=~\"$service_name\"}[5m])) by (eventtype)",
+                            "vrlFunctionQuery": "",
+                            "customQuery": true,
+                            "fields": {
+                                "stream": "camel_exchange_event_notifier_count",
+                                "stream_type": "metrics",
+                                "x": [],
+                                "y": [],
+                                "z": [],
+                                "breakdown": [],
+                                "filter": {
+                                    "filterType": "group",
+                                    "logicalOperator": "AND",
+                                    "conditions": []
+                                }
+                            },
+                            "config": {
+                                "promql_legend": "{eventtype}",
+                                "layer_type": "scatter",
+                                "weight_fixed": 1,
+                                "limit": 0,
+                                "min": 0,
+                                "max": 100,
+                                "time_shift": []
+                            }
+                        }
+                    ],
+                    "layout": {
+                        "x": 0,
+                        "y": 68,
+                        "w": 96,
+                        "h": 17,
+                        "i": 19
+                    },
+                    "htmlContent": "",
+                    "markdownContent": "",
+                    "customChartContent": ""
+                }
+            ]
+        }
+    ],
+    "variables": {
+        "list": [
+            {
+                "type": "query_values",
+                "name": "service_name",
+                "label": "Service",
+                "query_data": {
+                    "stream_type": "metrics",
+                    "stream": "process_uptime",
+                    "field": "service_name",
+                    "max_record_size": 10,
+                    "filter": []
+                },
+                "value": "",
+                "options": [],
+                "multiSelect": false,
+                "hideOnDashboard": false,
+                "selectAllValueForMultiSelect": "",
+                "customMultiSelectValue": [],
+                "escapeSingleQuotes": false
+            }
+        ],
+        "showDynamicFilters": true
+    },
+    "defaultDatetimeDuration": {
+        "type": "relative",
+        "relativeTimePeriod": "6h",
+        "startTime": 0,
+        "endTime": 0
+    }
+}
