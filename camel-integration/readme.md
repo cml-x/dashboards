@@ -4,21 +4,27 @@ A health view of a Java integration service: how the application itself is doing
 
 ## JVM
 
-- **Memory Usage**: how much memory the application is using, broken down by memory area — the earliest signal of memory pressure before it becomes a real problem.
-- **Garbage Collection**: how often and how long the application pauses to clean up memory; long or frequent pauses can cause visible slowdowns.
-- **Threads**: how many threads are running and what they're doing (active, waiting, blocked) — a growing number of blocked threads often points to a bottleneck somewhere.
-- **Class Loading**: general application activity, reflected in how many classes get loaded over time.
-- **CPU Usage**: how much processing power the application and the machine it runs on are using.
-- **Buffer Memory & Uptime**: additional memory usage and how long the process has been running without a restart.
+| Panel | What it tells you |
+| --- | --- |
+| **Memory Usage** | How much memory the application is using, broken down by memory area — the earliest signal of memory pressure before it becomes a real problem. |
+| **Garbage Collection** | How often and how long the application pauses to clean up memory; long or frequent pauses can cause visible slowdowns. |
+| **Threads** | How many threads are running and what they're doing (active, waiting, blocked) — a growing number of blocked threads often points to a bottleneck somewhere. |
+| **Class Loading** | General application activity, reflected in how many classes get loaded over time. |
+| **CPU Usage** | How much processing power the application and the machine it runs on are using. |
+| **Buffer Memory & Uptime** | Additional memory usage and how long the process has been running without a restart. |
+
+> **Tip:** a steadily climbing Memory Usage panel that never drops back down after garbage collection is the clearest early sign of a memory leak.
 
 ## Camel
 
-- **Active Routes**: how many integration routes are currently running.
-- **Message Throughput**: how many messages are flowing through, and what share of them succeed or fail.
-- **In-Flight Messages**: how many messages are being processed right now — a growing number can mean the integration is falling behind.
-- **Route Processing Time**: how long each route takes to handle a message, on average and in the worst case.
-- **Latency by Endpoint**: which type of destination (HTTP call, log, timer, ...) is the slowest.
-- **Event Activity**: how often routes start, send, and complete messages — useful for spotting unusual patterns.
+| Panel | What it tells you |
+| --- | --- |
+| **Active Routes** | How many integration routes are currently running. |
+| **Message Throughput** | How many messages are flowing through, and what share of them succeed or fail. |
+| **In-Flight Messages** | How many messages are being processed right now — a growing number can mean the integration is falling behind. |
+| **Route Processing Time** | How long each route takes to handle a message, on average and in the worst case. |
+| **Latency by Endpoint** | Which type of destination (HTTP call, log, timer, ...) is the slowest. |
+| **Event Activity** | How often routes start, send, and complete messages — useful for spotting unusual patterns. |
 
 ## How to Import
 
