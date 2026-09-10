@@ -51,6 +51,6 @@ JVM and Apache Camel monitoring dashboard for OpenObserve. It visualizes `jvm_*`
 ## How to Import
 
 1. In OpenObserve, go to **Dashboards** and click **Import**.
-2. Upload `Camel Integration.dashboard.json`.
+2. Upload `camel-integration.dashboard.json`.
 3. Make sure the JVM/Camel metrics above are being ingested (e.g. via an OpenTelemetry Java agent + Micrometer on your Camel application).
 4. Select the appropriate **Service** value to scope the dashboard to your instance.

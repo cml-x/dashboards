@@ -2,7 +2,7 @@
 
 Envoy sidecar monitoring dashboard for OpenObserve (`service_name=envoy`). It visualizes `cluster_*`, `http_*`, `listener_*`, `server_*`, `tls_*`, `dns_*`, `sds_*`, `overload_*`, `http2_*`, `filesystem_*`, `control_plane_*` and `access_logs_*` OpenTelemetry metrics. Panels are split into five tabs, all scoped by the **Service** and **Environment** variables.
 
-> Note: `worker_pool_*` (Vert.x) and `netty_*` metrics look Envoy-related by name but actually belong to the application (`service_name=sap-sys`), not the Envoy sidecar — they are covered by the [Camel Integration](../Camel%20Integration) dashboard instead.
+> Note: `worker_pool_*` (Vert.x) and `netty_*` metrics look Envoy-related by name but actually belong to the application (`service_name=sap-sys`), not the Envoy sidecar — they are covered by the [Camel Integration](../camel-integration) dashboard instead.
 
 ## Dashboard Features
 
@@ -61,6 +61,6 @@ Envoy sidecar monitoring dashboard for OpenObserve (`service_name=envoy`). It vi
 ## How to Import
 
 1. In OpenObserve, go to **Dashboards** and click **Import**.
-2. Upload `API Gateway.dashboard.json`.
+2. Upload `api-gateway.dashboard.json`.
 3. Make sure the Envoy metrics above are being ingested (Envoy admin stats sink via OpenTelemetry, `service_name=envoy`).
 4. Select the appropriate **Service** and **Environment** values to scope the dashboard to your instance.
